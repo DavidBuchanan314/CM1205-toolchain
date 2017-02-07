@@ -5,7 +5,6 @@
 option casemap:none
 
 include windows.inc
-include kernel32.inc
 
 .DATA
 	msg		BYTE	"Hello, world!", 0Dh, 0Ah, 0

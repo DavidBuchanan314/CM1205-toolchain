@@ -1,5 +1,5 @@
 MINGWARCH=i686
-JWASMFLAGS=-I $(HOME)/.wine/drive_c/masm32/include/ -nologo -elf
+JWASMFLAGS=-I /usr/local/include/wininc/ -nologo -elf
 LDFLAGS=-lkernel32 -luser32
 
 all: hello.exe
