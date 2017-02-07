@@ -16,6 +16,6 @@ include kernel32.inc
 	main:		
 			invoke	GetStdHandle, STD_OUTPUT_HANDLE
 			mov	hConsole, eax;
-			invoke	WriteConsoleA, hConsole, addr msg, sizeof msg, addr dwWritten, 0
+			invoke	WriteConsoleA, hConsole, addr msg, sizeof msg, addr dwWritten, NULL
 			invoke	ExitProcess, 0
 END	main
