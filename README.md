@@ -2,11 +2,11 @@
 Instructions for assembling, running, and debugging the MASM syntax assembly featured in the CM1205 module at Cardiff University
 
 ## Requirements:
-	- JWasm (assembler)
-	- MinGW binutils (specifically, `ld` for linking with the Windows libraries)
-	- wine (for execution)
-	- gdb.exe (for debugging)
-	- MASM32 SDK
+ - JWasm (assembler)
+ - MinGW binutils (specifically, `ld` for linking with the Windows libraries)
+ - wine (for execution)
+ - gdb.exe (for debugging)
+ - MASM32 SDK
 
 These tools can likely all be installed via your system's Package Manager.
 However, I found the version of gdb.exe that shipped with MinGW to be very unstable, and eventually I found an older version that worked:
@@ -21,5 +21,4 @@ See the `Makefile` in the `hello` directory for an example of how to use these t
 
 ## Issues:
 
-	- I've been unable to get JWasm to output line number debugging information in a way which is compatible with the rest of the toolchain.
-	- 
+ - I've been unable to get JWasm to output line number debugging information in a way which is compatible with the rest of the toolchain.
