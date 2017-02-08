@@ -30,3 +30,4 @@ See the `Makefile` in the `hello` directory for an example of how to use these t
 ## Issues:
 
  - I've been unable to get JWasm to output line number debugging information in a way which is compatible with the rest of the toolchain.
+ - Debugging through Wine is slightly janky.
