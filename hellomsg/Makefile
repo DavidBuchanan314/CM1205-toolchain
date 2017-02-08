@@ -1,5 +1,5 @@
 MINGWARCH=i686
-JWASMFLAGS=-I /usr/local/include/wininc/ -nologo -elf
+JWASMFLAGS=-I /usr/local/include/wininc/ -nologo -elf -zt1
 LDFLAGS=-lkernel32 -luser32
 
 all: hello.exe
