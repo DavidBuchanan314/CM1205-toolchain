@@ -8,8 +8,8 @@ include windows.inc
 
 .DATA
 	msg		BYTE	"Hello, world!", 0Dh, 0Ah, 0
-	dwWritten	DWORD	0
-	hConsole	DWORD	0
+	dwWritten	DWORD	?
+	hConsole	DWORD	?
 	
 .CODE
 	main:		
