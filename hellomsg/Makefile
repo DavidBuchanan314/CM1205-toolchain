@@ -10,6 +10,9 @@ run: hello.exe
 debug: hello.exe
 	wineconsole --backend=curses gdb.exe hello.exe
 
+debug2: hello.exe
+	wine hello.exe & sleep 1 && sudo gdb -p $$! -ex go hello.exe
+
 hello.exe: hello.o
 	$(MINGWARCH)-w64-mingw32-ld hello.o $(LDFLAGS) -o hello.exe	
 
