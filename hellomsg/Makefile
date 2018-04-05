@@ -1,23 +1,27 @@
-MINGWARCH=i686
-JWASMFLAGS=-I /usr/local/include/wininc/ -nologo -elf -zt1
-LDFLAGS=-lkernel32 -luser32
+MINGWARCH := i686
+JWASMFLAGS := -I /usr/local/include/wininc/ -nologo -elf -zt1
+LDFLAGS := -lkernel32 -luser32
 
-all: hello.exe
+TARGET := hello
 
-run: hello.exe
-	wine hello.exe
+.PHONY: run debug debug2 clean
 
-debug: hello.exe
-	wineconsole --backend=curses gdb.exe hello.exe
+all: $(TARGET).exe
 
-debug2: hello.exe
-	wine hello.exe & sleep 1 && sudo gdb -p $$! -ex go hello.exe
+run: $(TARGET).exe
+	wine $(TARGET).exe
 
-hello.exe: hello.o
-	$(MINGWARCH)-w64-mingw32-ld hello.o $(LDFLAGS) -o hello.exe	
+debug: $(TARGET).exe
+	wineconsole --backend=curses gdb.exe $(TARGET).exe
 
-hello.o: hello.s
-	jwasm $(JWASMFLAGS) hello.s
+debug2: $(TARGET).exe
+	wine $(TARGET).exe & sleep 1 && sudo gdb -p $$! -ex go $(TARGET).exe
+
+%.exe: %.o
+	$(MINGWARCH)-w64-mingw32-ld $< $(LDFLAGS) -o $@
+
+%.o: %.s
+	jwasm $(JWASMFLAGS) $<
 
 clean:
 	rm -f *.o *.exe

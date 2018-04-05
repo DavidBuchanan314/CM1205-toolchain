@@ -2,7 +2,7 @@ MINGWARCH := i686
 JWASMFLAGS := -I /usr/local/include/wininc/ -nologo -elf -zt1
 LDFLAGS := -lkernel32 -luser32
 
-TARGET := hello
+TARGET := example # edit this
 
 .PHONY: run debug debug2 clean
 
